@@ -1,0 +1,23 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    iso8601 (0.13.0)
+    json (2.5.1)
+    mini_portile2 (2.5.0)
+    nokogiri (1.11.2)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    open-uri (0.1.0)
+    racc (1.5.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  iso8601
+  json
+  nokogiri
+  open-uri
+
+BUNDLED WITH
+   2.1.4
