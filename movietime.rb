@@ -22,16 +22,38 @@ def get_random_movie
     return get_random_movie
   end
 
-  # Make sure there are ratings
+  # Skip movies without ratings
   rating = movie.at_css('.user_score_chart')['data-percent']
   if rating == "0.0"
     puts "No ratings were present; trying again."
     return get_random_movie
   end
 
-  # Make sure a poster exists
+  # Skip movies without posters
   if movie.at_css('.poster.no_image')
     puts "No poster found; trying again."
+    return get_random_movie
+  end
+
+  # Skip documentaries and music
+  excluded_genres = %w[documentary music]
+  genre = movie.at_css('.genres a')
+  if genre.nil? || excluded_genres.include?(genre.text.downcase)
+    puts "Genre was incorrect; trying again."
+    return get_random_movie
+  end
+
+  # Skip movies that are less than an hour
+  duration = movie.at_css('.runtime')
+  if duration.nil? || !duration.text.include?('h')
+    puts "Movie was too short; trying again."
+    return get_random_movie
+  end
+
+  # Skip movies without supplementary videos
+  videos = movie.at_css('#videos span')
+  if videos.nil? || videos.text == "0"
+    puts "No supplementary videos found; trying again."
     return get_random_movie
   end
 
