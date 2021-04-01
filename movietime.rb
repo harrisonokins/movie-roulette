@@ -50,10 +50,9 @@ def get_random_movie
     return get_random_movie
   end
 
-  # Skip movies without supplementary videos
-  videos = movie.at_css('#videos span')
-  if videos.nil? || videos.text == "0"
-    puts "No supplementary videos found; trying again."
+  # Skip movies without trailers
+  unless movie.at_css('.play_trailer')
+    puts "No trailer found; trying again."
     return get_random_movie
   end
 
