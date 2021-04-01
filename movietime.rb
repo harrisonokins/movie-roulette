@@ -2,6 +2,15 @@ require 'iso8601'
 require 'json'
 require 'open-uri'
 require 'nokogiri'
+require 'sinatra'
+
+get '/' do
+  haml :index
+end
+
+get '/movie' do
+  get_random_movie.to_json
+end
 
 def get_random_movie
   id = rand(2..812632)
