@@ -18,7 +18,7 @@ def get_random_movie
 
   begin
     movie = Nokogiri::HTML(URI.open(url))
-  rescue OpenURI::HTTPError
+  rescue
     return get_random_movie
   end
 
