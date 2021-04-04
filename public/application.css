@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Rajdhani';
-  src: url(Rajdhani-Light.ttf);
+  font-family: 'Source Sans Pro';
+  src: url(SourceSansPro-Light.ttf);
 }
 
 body, html {
@@ -10,7 +10,7 @@ body, html {
   padding: 0;
   background: #adadad;
   overflow: hidden;
-  font-family: Rajdhani;
+  font-family: 'Source Sans Pro';
 }
 
 video {
