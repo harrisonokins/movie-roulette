@@ -1,62 +1,83 @@
+@font-face {
+  font-family: 'Rajdhani';
+  src: url(Rajdhani-Light.ttf);
+}
+
 body, html {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #5CA4EA;
+  background: #adadad;
   overflow: hidden;
+  font-family: Rajdhani;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .container {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  height: 100vh;
+  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.center {
-  width: 180px;
-  height: 60px;
-  position: absolute;
-}
-
-.btn {
-  width: 180px;
-  height: 60px;
+#generator {
+	width: 725px;
+	height: 725px;
+	border-radius: 100%;
+	background: linear-gradient(165deg, rgba(255,255,255,1) 0%, rgb(220, 220, 220) 40%, rgb(170, 170, 170) 98%, rgb(10, 10, 10) 100%);
+	position: relative;
   cursor: pointer;
-  background: transparent;
-  border: 1px solid #91C9FF;
-  outline: none;
-  transition: 1s ease-in-out;
 }
 
-svg {
-  position: absolute;
-  left: 0;
+#generator:before {
+	position: absolute;
   top: 0;
-  fill: none;
-  stroke: #fff;
-  stroke-dasharray: 150 480;
-  stroke-dashoffset: 150;
-  transition: 1s ease-in-out;
+  left: 0;
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	border-bottom: 0 solid #ffffff05;
+
+	box-shadow:
+		0 -10px 20px 20px #ffffff40 inset,
+		0 -5px 15px 10px #ffffff50 inset,
+		0 -2px 5px #ffffff80 inset,
+		0 -3px 2px #ffffffBB inset,
+		0 2px 0px #ffffff,
+		0 2px 3px #ffffff,
+		0 5px 5px #ffffff90,
+		0 10px 15px #ffffff60,
+		0 10px 20px 20px #ffffff40;
+	filter: blur(3px);
+	animation: 2s rotate linear infinite;
 }
 
-.btn:hover {
-  transition: 1s ease-in-out;
-  background: #4F95DA;
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg)
+	}
 }
 
-.btn:hover svg {
-  stroke-dashoffset: -480;
-}
-
-.btn span {
+h1 {
   color: white;
-  font-size: 18px;
+  font-size: 75px;
   font-weight: 100;
+  color: #4f4f4f;
+  opacity: 1;
+  transition: opacity 1s;
+  position: relative;
+  top: 50%;
+  margin-top: -60px;
 }

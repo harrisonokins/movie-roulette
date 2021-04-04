@@ -7,10 +7,8 @@
     %link{ rel: "shortcut icon", href: "favicon.png" }
     %script{ src: "application.js", type: "text/javascript" }
 %body
+  %video#background-video{ playsinline: true, muted: true, loop: true, poster: "background.png" }
+    %source{ src: "background.mp4", type: "video/mp4" }
   .container
-    .center
-      %button#generator.btn
-        %svg.border{ width: "180px", height: "60px", viewBox: "0 0 180 60" }
-          %polyline.bg-line{ points: "179,1 179,59 1,59 1,1 179,1" }
-          %polyline.hl-line{ points: "179,1 179,59 1,59 1,1 179,1" }
-        %span Show Me The Movie
+    #generator
+      %h1 Begin
