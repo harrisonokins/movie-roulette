@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/movie' do
-  get_random_movie.to_json
+  redirect get_random_movie[:url]
 end
 
 def get_random_movie
