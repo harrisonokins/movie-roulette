@@ -29,10 +29,11 @@ def get_random_movie
     return get_random_movie
   end
 
-  # Skip movies without reviews
+  # Skip movies without at least one review or discussion
   reviews = movie.at_css('#reviews > span').text
-  if reviews == "0"
-    puts "No reviews were present; trying again."
+  discussions = movie.at_css('#discussions > span').text
+  if reviews == "0" && discussions == "0"
+    puts "No reviews or discussions were present; trying again."
     return get_random_movie
   end
 
