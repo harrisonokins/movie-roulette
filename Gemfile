@@ -7,3 +7,5 @@ gem "json"
 gem "open-uri"
 gem "nokogiri"
 gem "sinatra"
+
+gem "rackup", "~> 2.1"
