@@ -12,6 +12,10 @@ get '/movie' do
   redirect get_random_movie[:url]
 end
 
+get '/movie.json' do
+  get_random_movie.to_json
+end
+
 def get_random_movie
   id = rand(2..812632)
   url = "https://www.themoviedb.org/movie/#{id}"

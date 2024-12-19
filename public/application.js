@@ -7,7 +7,7 @@ var makeRequest = function() {
 
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = alertContents;
-  httpRequest.open('GET', 'movie');
+  httpRequest.open('GET', 'movie.json');
   httpRequest.send();
 
   var saySomething = function() {
