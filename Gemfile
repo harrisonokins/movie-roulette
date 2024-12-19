@@ -7,6 +7,6 @@ gem "haml"
 gem "json"
 gem "open-uri"
 gem "nokogiri"
+gem "puma"
+gem "rackup"
 gem "sinatra"
-
-gem "rackup", "~> 2.1"

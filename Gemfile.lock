@@ -13,6 +13,7 @@ GEM
     mini_portile2 (2.8.8)
     mustermann (3.0.3)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.7.4)
     nokogiri (1.17.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -20,6 +21,8 @@ GEM
       stringio
       time
       uri
+    puma (6.5.0)
+      nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.8)
     rack-protection (4.1.1)
@@ -55,7 +58,8 @@ DEPENDENCIES
   json
   nokogiri
   open-uri
-  rackup (~> 2.1)
+  puma
+  rackup
   sinatra
 
 BUNDLED WITH
